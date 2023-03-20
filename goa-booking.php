@@ -98,7 +98,7 @@ class Goa_Booking
     public function plugin_settings_link()
     {
         add_menu_page(
-            esc_html__('GoA Booking Settings', 'lookway-todo'),
+            esc_html__('GoA Booking Admin', 'lookway-todo'),
             esc_html__('GoA Settings', 'lookway-todo'),
             'manage_options',
             GOA_BOOKING_SLUG_WP_PLUGIN_SETTINGS,
@@ -116,6 +116,7 @@ class Goa_Booking
             // Enqueue styles
             wp_enqueue_style('goa-booking-bootstrap-icons', GOA_BOOKING_PLUGIN_URL . 'libs/bootstrap/icons/bootstrap-icons.css');
             wp_enqueue_style('goa-booking-bootstrap', GOA_BOOKING_PLUGIN_URL . 'libs/bootstrap/bootstrap.min.css');
+            wp_enqueue_style('goa-booking-admin', GOA_BOOKING_PLUGIN_URL . 'admin/style.css');
 
             // Enqueue scripts
             wp_enqueue_script('goa-booking-bootstrap', GOA_BOOKING_PLUGIN_URL . 'libs/bootstrap/bootstrap.min.js', '', '', true);
