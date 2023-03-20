@@ -19,42 +19,19 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>First Example</td>
-                        <td>Last Example</td>
-                        <td>example@mdo</td>
-                        <td>+380933333333</td>
-                        <td>examplelogin</td>
-                        <td style="width: 450px">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod impedit saepe vero illo cupiditate exercitationem inventore, autem iure dolore sapiente!</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>First Example</td>
-                        <td>Last Example</td>
-                        <td>example@mdo</td>
-                        <td>+380933333333</td>
-                        <td>examplelogin</td>
-                        <td style="width: 450px">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod impedit saepe vero illo cupiditate exercitationem inventore, autem iure dolore sapiente!</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>First Example</td>
-                        <td>Last Example</td>
-                        <td>example@mdo</td>
-                        <td>+380933333333</td>
-                        <td>examplelogin</td>
-                        <td style="width: 450px">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod impedit saepe vero illo cupiditate exercitationem inventore, autem iure dolore sapiente!</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>First Example</td>
-                        <td>Last Example</td>
-                        <td>example@mdo</td>
-                        <td>+380933333333</td>
-                        <td>examplelogin</td>
-                        <td style="width: 450px">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod impedit saepe vero illo cupiditate exercitationem inventore, autem iure dolore sapiente!</td>
-                    </tr>
+
+                    <?php $agents = goa_booking_get_agents(); ?>
+                    <?php foreach ($agents as $agent) { ?>
+                        <tr>
+                            <th scope="row"><?php echo $agent->id; ?></th>
+                            <td><?php echo $agent->first_name; ?></td>
+                            <td><?php echo $agent->last_name; ?></td>
+                            <td><?php echo $agent->email; ?></td>
+                            <td><?php echo $agent->phone; ?></td>
+                            <td><?php echo $agent->login; ?></td>
+                            <td style="width: 450px"><?php echo $agent->bio; ?></td>
+                        </tr>
+                    <?php } ?>
                 </tbody>
             </table>
         </div>

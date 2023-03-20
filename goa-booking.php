@@ -49,6 +49,12 @@ class Goa_Booking
     {
         // HELPERS
         include_once(GOA_BOOKING_PLUGIN_PATH . 'inc/helpers/database_helper.php');
+
+        // MODELS
+        include_once(GOA_BOOKING_PLUGIN_PATH . 'inc/models/agents_model.php');
+
+        // CONTROLLERS
+        include_once(GOA_BOOKING_PLUGIN_PATH . 'inc/controllers/agents_controller.php');
     }
 
     public function init_hooks()
