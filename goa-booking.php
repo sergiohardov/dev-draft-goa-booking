@@ -114,10 +114,11 @@ class Goa_Booking
 
         if ($screen->id === 'toplevel_page_' . GOA_BOOKING_SLUG_WP_PLUGIN_SETTINGS) {
             // Enqueue styles
-            wp_enqueue_style('goa-booking-bootstrap', GOA_BOOKING_PLUGIN_URL . '/libs/bootstrap/bootstrap.min.css');
+            wp_enqueue_style('goa-booking-bootstrap-icons', GOA_BOOKING_PLUGIN_URL . 'libs/bootstrap/icons/bootstrap-icons.css');
+            wp_enqueue_style('goa-booking-bootstrap', GOA_BOOKING_PLUGIN_URL . 'libs/bootstrap/bootstrap.min.css');
 
             // Enqueue scripts
-            wp_enqueue_script('goa-booking-bootstrap', GOA_BOOKING_PLUGIN_URL . '/libs/bootstrap/bootstrap.min.js', '', '', true);
+            wp_enqueue_script('goa-booking-bootstrap', GOA_BOOKING_PLUGIN_URL . 'libs/bootstrap/bootstrap.min.js', '', '', true);
         }
     }
 }
