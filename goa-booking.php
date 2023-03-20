@@ -32,6 +32,10 @@ class Goa_Booking
         // Defines for url path plugin
         define('GOA_BOOKING_PLUGIN_URL', plugin_dir_url(__FILE__));
 
+        // Defines for roles
+        define('GOA_BOOKING_WP_AGENT_ROLE', 'goa_booking_agent');
+        define('GOA_BOOKING_WP_CUSTOMER_ROLE', 'goa_booking_customer');
+
         // Defines for tables in database
         global $wpdb;
         define('GOA_BOOKING_TABLE_AGENTS', $wpdb->prefix . 'goa_booking_agents');
@@ -56,6 +60,17 @@ class Goa_Booking
 
         // Setup Tables
         Goa_Booking_Database_Helper::run_setup();
+
+
+        // Add roles
+        add_role(GOA_BOOKING_WP_AGENT_ROLE, __('GoA Agent', 'goa-booking'));
+        $agent_role = get_role(GOA_BOOKING_WP_AGENT_ROLE);
+
+        $agent_role->add_cap('read');
+        $agent_role->add_cap('upload_files');
+        $agent_role->add_cap('edit_bookings');
+
+        add_role(GOA_BOOKING_WP_CUSTOMER_ROLE, __('GoA Client'), 'goa-booking');
     }
 
     public function on_deactivate()
