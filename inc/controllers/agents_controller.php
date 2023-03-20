@@ -8,3 +8,8 @@ function goa_booking_get_agents()
 
     return $agents;
 }
+
+function goa_booking_get_template_part($template, $data)
+{
+    return Goa_Booking_Template_Helper::render($template, $data);
+}

@@ -48,15 +48,7 @@
                     <tbody>
                         <?php $agents = goa_booking_get_agents(); ?>
                         <?php foreach ($agents as $agent) { ?>
-                            <tr>
-                                <th scope="row"><?php echo $agent->id; ?></th>
-                                <td><?php echo $agent->first_name; ?></td>
-                                <td><?php echo $agent->last_name; ?></td>
-                                <td><?php echo $agent->email; ?></td>
-                                <td><?php echo $agent->phone; ?></td>
-                                <td><?php echo $agent->login; ?></td>
-                                <td><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalDeleteAgent" data-agent-id="<?php echo $agent->id; ?>"><i class="bi bi-trash"></i></button></td>
-                            </tr>
+                            <?php echo goa_booking_get_template_part('admin/agent-table-item', $agent); ?>
                         <?php } ?>
                     </tbody>
                 </table>

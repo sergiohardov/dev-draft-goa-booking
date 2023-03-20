@@ -5,7 +5,7 @@ class Goa_Booking_Agents_Model
     static function get_agents()
     {
         global $wpdb;
-        $result = $wpdb->get_results("SELECT * FROM " . GOA_BOOKING_TABLE_AGENTS);
+        $result = $wpdb->get_results("SELECT * FROM " . GOA_BOOKING_TABLE_AGENTS, 'ARRAY_A');
         return $result;
     }
 
