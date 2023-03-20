@@ -6,9 +6,55 @@
  * Author URI:  https://t.me/sergiohardov
  * Author:      Sergio Hardov
  * Version:     1.0
- * Text Domain: arts-booking
+ * Text Domain: goa-booking
  * Domain Path: /lang
  * License:     GPL2
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  */
 
+if (!defined('ABSPATH')) die;
+
+// Main Class
+class Goa_Booking
+{
+    public function __construct()
+    {
+        $this->defines();
+        $this->includes();
+        $this->init_hooks();
+    }
+
+    public function defines()
+    {
+        // Defines for abs path plugin
+        define('GOA_BOOKING_PLUGIN_PATH', plugin_dir_path(__FILE__));
+
+        // Defines for url path plugin
+        define('GOA_BOOKING_PLUGIN_URL', plugin_dir_url(__FILE__));
+    }
+
+    public function includes()
+    {
+        // some includes
+    }
+
+    public function init_hooks()
+    {
+        register_activation_hook(__FILE__, [$this, 'on_activate']);
+        register_deactivation_hook(__FILE__, [$this, 'on_deactivate']);
+    }
+
+    public function on_activate()
+    {
+        flush_rewrite_rules();
+    }
+
+    public function on_deactivate()
+    {
+        flush_rewrite_rules();
+    }
+}
+
+
+// Instanse of main class
+$Goa_Booking = new Goa_Booking();
