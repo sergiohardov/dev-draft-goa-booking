@@ -56,6 +56,10 @@ class Goa_Booking
 
         // CONTROLLERS
         include_once(GOA_BOOKING_PLUGIN_PATH . 'inc/controllers/agents_controller.php');
+
+        // AJAX
+        include_once(GOA_BOOKING_PLUGIN_PATH . 'ajax/admin/add_agent.php');
+        include_once(GOA_BOOKING_PLUGIN_PATH . 'ajax/admin/delete_agent.php');
     }
 
     public function init_hooks()

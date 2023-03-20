@@ -33,7 +33,7 @@
 
         <div class="row">
             <div class="col">
-                <table class="table table-striped table-sm align-middle">
+                <table id="goa_booking_add_agent_table" class="table table-striped table-sm align-middle">
                     <thead>
                         <tr>
                             <th scope="col">ID</th>
@@ -65,7 +65,7 @@
                 </div>
                 <div class="modal-body">
 
-                    <form id="goa_booking_add_agent">
+                    <form id="goa_booking_add_agent_form">
                         <div class="mb-3">
                             <label for="agent_login" class="form-label"><?php _e('Login', 'goa-booking'); ?></label>
                             <div class="input-group">
@@ -145,8 +145,8 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?php _e('Close', 'goa-booking'); ?></button>
-                    <button id="goa_booking_add_agent_button" type="button" class="btn btn-danger"><span><?php _e('Delete', 'goa-booking'); ?></span></button>
+                    <button type="button" class="btn btn-secondary delete_agent_button_discard" data-bs-dismiss="modal"><?php _e('Close', 'goa-booking'); ?></button>
+                    <button type="button" class="btn btn-danger delete_agent_button_approve"><span><?php _e('Delete', 'goa-booking'); ?></span></button>
                 </div>
             </div>
         </div>
