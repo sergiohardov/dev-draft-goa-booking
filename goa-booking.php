@@ -31,11 +31,17 @@ class Goa_Booking
 
         // Defines for url path plugin
         define('GOA_BOOKING_PLUGIN_URL', plugin_dir_url(__FILE__));
+
+        // Defines for tables in database
+        global $wpdb;
+        define('GOA_BOOKING_TABLE_AGENTS', $wpdb->prefix . 'goa_booking_agents');
+        define('GOA_BOOKING_TABLE_CUSTOMERS', $wpdb->prefix . 'goa_booking_customers');
     }
 
     public function includes()
     {
-        // some includes
+        // HELPERS
+        include_once(GOA_BOOKING_PLUGIN_PATH . 'inc/helpers/database_helper.php');
     }
 
     public function init_hooks()
@@ -47,6 +53,9 @@ class Goa_Booking
     public function on_activate()
     {
         flush_rewrite_rules();
+
+        // Setup Tables
+        Goa_Booking_Database_Helper::run_setup();
     }
 
     public function on_deactivate()
